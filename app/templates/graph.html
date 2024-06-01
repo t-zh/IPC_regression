@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plotly Graph</title>
+    <style>
+        .plotly-text {
+        font-size: 5vw; /* Relative font size based on viewport width */
+        }
+    </style>
+</head>
+<body>
+    <h1>Динамика изменения индекса потребительских цен по месяцам</h1>
+    <p> <a href =https://rosstat.gov.ru/statistics/price> по данным Росстата </a>
+
+    <div id='divPlotly'></div>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+    <script>
+        var graphs = {{ graphJSON | safe }};
+        Plotly.newPlot('divPlotly', graphs);
+    </script>
+</body>
+</html>
